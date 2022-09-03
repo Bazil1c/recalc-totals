@@ -1,0 +1,16 @@
+{
+    "diagnostics": {
+        "skipSupport": "withSupport",
+        "ordinaryAppSupport": false,
+        "parameters": {
+            "DeprecatedMethods8317": false,
+            "UsingObjectNotAvailableUnix": false,
+            "MagicNumber": {
+                "authorizedNumbers": "100"
+            },
+            "Typo": {
+                "userWordsToIgnore": ""
+            }    
+        }
+    }
+}
