@@ -1,0 +1,500 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.13">
+	<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ФормаКомандаВыполнить" id="97">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.КомандаВыполнить</CommandName>
+				<ExtendedTooltip name="ФормаКомандаВыполнитьРасширеннаяПодсказка" id="98"/>
+			</Button>
+			<Button name="ФормаПроверитьПодключениеКСерверуSQL" id="53">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ПроверитьПодключениеКСерверуSQL</CommandName>
+				<ExtendedTooltip name="ФормаПроверитьПодключениеКСерверуSQLРасширеннаяПодсказка" id="54"/>
+			</Button>
+			<Button name="ОткрытьСтраницуРазработкиНаИнфостарте" id="102">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ОткрытьСтраницуРазработкиНаИнфостарте</CommandName>
+				<Picture>
+					<xr:Abs>Picture.png</xr:Abs>
+					<xr:LoadTransparent>false</xr:LoadTransparent>
+				</Picture>
+				<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+				<ExtendedTooltip name="ОткрытьСтраницуРазработкиНаИнфостартеРасширеннаяПодсказка" id="103"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="FillCheckProcessingAtServer">ОбработкаПроверкиЗаполненияНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаНастройкиПодключенияSQL" id="47">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройки подключения SQL</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройки подключения SQL</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Behavior>Usual</Behavior>
+			<ExtendedTooltip name="ГруппаНастройкиПодключенияSQLРасширеннаяПодсказка" id="48"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаНастройкиСерверБаза" id="49">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа настройки сервер база</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Vertical</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаНастройкиСерверБазаРасширеннаяПодсказка" id="50"/>
+					<ChildItems>
+						<InputField name="ИмяСервера" id="1">
+							<DataPath>Объект.ИмяСервера</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoMarkIncomplete>true</AutoMarkIncomplete>
+							<ContextMenu name="ИмяСервераКонтекстноеМеню" id="2"/>
+							<ExtendedTooltip name="ИмяСервераРасширеннаяПодсказка" id="3"/>
+						</InputField>
+						<InputField name="ИмяБД" id="4">
+							<DataPath>Объект.ИмяБД</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoMarkIncomplete>true</AutoMarkIncomplete>
+							<ContextMenu name="ИмяБДКонтекстноеМеню" id="5"/>
+							<ExtendedTooltip name="ИмяБДРасширеннаяПодсказка" id="6"/>
+						</InputField>
+						<CheckBoxField name="ВыполнятьНаСервере" id="99">
+							<DataPath>ВыполнятьНаСервере</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Подключение к MS-SQL </v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>Left</TitleLocation>
+							<CheckBoxType>Tumbler</CheckBoxType>
+							<EditFormat>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>БЛ='На клиенте'; БИ='На сервере'</v8:content>
+								</v8:item>
+							</EditFormat>
+							<ContextMenu name="ВыполнятьНаСервереКонтекстноеМеню" id="100"/>
+							<ExtendedTooltip name="ВыполнятьНаСервереРасширеннаяПодсказка" id="101"/>
+						</CheckBoxField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаНастройкиПользовательПароль" id="51">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа настройки пользователь пароль</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Vertical</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаНастройкиПользовательПарольРасширеннаяПодсказка" id="52"/>
+					<ChildItems>
+						<CheckBoxField name="АутентификацияОС" id="89">
+							<DataPath>Объект.АутентификацияОС</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Аутентификация</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>Left</TitleLocation>
+							<CheckBoxType>Tumbler</CheckBoxType>
+							<EditFormat>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>БЛ=SQL; БИ=Windows</v8:content>
+								</v8:item>
+							</EditFormat>
+							<ContextMenu name="АутентификацияОСКонтекстноеМеню" id="90"/>
+							<ExtendedTooltip name="АутентификацияОСРасширеннаяПодсказка" id="91"/>
+							<Events>
+								<Event name="OnChange">АутентификацияОСПриИзменении</Event>
+							</Events>
+						</CheckBoxField>
+						<InputField name="ИмяПользователя" id="7">
+							<DataPath>Объект.ИмяПользователя</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoMarkIncomplete>true</AutoMarkIncomplete>
+							<ContextMenu name="ИмяПользователяКонтекстноеМеню" id="8"/>
+							<ExtendedTooltip name="ИмяПользователяРасширеннаяПодсказка" id="9"/>
+						</InputField>
+						<InputField name="Пароль" id="10">
+							<DataPath>Объект.Пароль</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<PasswordMode>true</PasswordMode>
+							<ContextMenu name="ПарольКонтекстноеМеню" id="11"/>
+							<ExtendedTooltip name="ПарольРасширеннаяПодсказка" id="12"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаДействия" id="92">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Действия</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа действия</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ChildItemsWidth>Equal</ChildItemsWidth>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаДействияРасширеннаяПодсказка" id="93"/>
+			<ChildItems>
+				<CheckBoxField name="ОчищатьТаблицыСредствамиSQL" id="13">
+					<DataPath>Объект.ОчищатьТаблицыСредствамиSQL</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ОчищатьТаблицыСредствамиSQLКонтекстноеМеню" id="14"/>
+					<ExtendedTooltip name="ОчищатьТаблицыСредствамиSQLРасширеннаяПодсказка" id="15"/>
+				</CheckBoxField>
+				<CheckBoxField name="ПересчитыватьИтоги" id="94">
+					<DataPath>Объект.ПересчитыватьИтоги</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ПересчитыватьИтогиКонтекстноеМеню" id="95"/>
+					<ExtendedTooltip name="ПересчитыватьИтогиРасширеннаяПодсказка" id="96"/>
+				</CheckBoxField>
+			</ChildItems>
+		</UsualGroup>
+		<Table name="ДеревоДанных" id="55">
+			<Representation>Tree</Representation>
+			<ChangeRowSet>false</ChangeRowSet>
+			<ChangeRowOrder>false</ChangeRowOrder>
+			<SelectionMode>SingleRow</SelectionMode>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>ДеревоДанных</DataPath>
+			<RowPictureDataPath>ДеревоДанных.ИндексКартинки</RowPictureDataPath>
+			<RowsPicture>
+				<xr:Abs>RowsPicture.png</xr:Abs>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</RowsPicture>
+			<ContextMenu name="ДеревоДанныхКонтекстноеМеню" id="56"/>
+			<AutoCommandBar name="ДеревоДанныхКоманднаяПанель" id="57">
+				<Autofill>false</Autofill>
+				<ChildItems>
+					<Button name="ДеревоДанныхКомандаСнятьПометки" id="83">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.КомандаСнятьПометки</CommandName>
+						<ExtendedTooltip name="ДеревоДанныхКомандаСнятьПометкиРасширеннаяПодсказка" id="84"/>
+					</Button>
+					<Button name="ДеревоДанныхКомандаУстановитьПометки" id="85">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.КомандаУстановитьПометки</CommandName>
+						<ExtendedTooltip name="ДеревоДанныхКомандаУстановитьПометкиРасширеннаяПодсказка" id="86"/>
+					</Button>
+				</ChildItems>
+			</AutoCommandBar>
+			<ExtendedTooltip name="ДеревоДанныхРасширеннаяПодсказка" id="58"/>
+			<SearchStringAddition name="ДеревоДанныхСтрокаПоиска" id="59">
+				<AdditionSource>
+					<Item>ДеревоДанных</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ДеревоДанныхСтрокаПоискаКонтекстноеМеню" id="62"/>
+				<ExtendedTooltip name="ДеревоДанныхСтрокаПоискаРасширеннаяПодсказка" id="63"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ДеревоДанныхСостояниеПросмотра" id="64">
+				<AdditionSource>
+					<Item>ДеревоДанных</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ДеревоДанныхСостояниеПросмотраКонтекстноеМеню" id="67"/>
+				<ExtendedTooltip name="ДеревоДанныхСостояниеПросмотраРасширеннаяПодсказка" id="68"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ДеревоДанныхУправлениеПоиском" id="69">
+				<AdditionSource>
+					<Item>ДеревоДанных</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ДеревоДанныхУправлениеПоискомКонтекстноеМеню" id="72"/>
+				<ExtendedTooltip name="ДеревоДанныхУправлениеПоискомРасширеннаяПодсказка" id="73"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<CheckBoxField name="ДеревоДанныхПометка" id="80">
+					<DataPath>ДеревоДанных.Пометка</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<FixingInTable>Left</FixingInTable>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ДеревоДанныхПометкаКонтекстноеМеню" id="81"/>
+					<ExtendedTooltip name="ДеревоДанныхПометкаРасширеннаяПодсказка" id="82"/>
+					<Events>
+						<Event name="OnChange">ДеревоДанныхПометкаПриИзменении</Event>
+					</Events>
+				</CheckBoxField>
+				<InputField name="ДеревоДанныхСиноним" id="74">
+					<DataPath>ДеревоДанных.Синоним</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ДеревоДанныхСинонимКонтекстноеМеню" id="75"/>
+					<ExtendedTooltip name="ДеревоДанныхСинонимРасширеннаяПодсказка" id="76"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:ExternalDataProcessorObject.УскоренныйПолныйПересчетИтоговРегистров</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<Save>
+				<Field>Объект.АутентификацияОС</Field>
+				<Field>Объект.ИмяБД</Field>
+				<Field>Объект.ИмяПользователя</Field>
+				<Field>Объект.ИмяСервера</Field>
+				<Field>Объект.ОчищатьТаблицыСредствамиSQL</Field>
+				<Field>Объект.Пароль</Field>
+				<Field>Объект.ПересчитыватьИтоги</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="ДеревоДанных" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дерево данных</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTree</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Синоним" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Синоним</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>200</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Имя" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Имя</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>200</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Пометка" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Пометка</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ИндексКартинки" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Индекс картинки</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>1</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ДоступнаРаботаСMSSQL" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Доступна работа СMSSQL</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ВыполнятьНаСервере" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выполнять на сервере</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<Save>
+				<Field>ВыполнятьНаСервере</Field>
+			</Save>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ПроверитьПодключениеКСерверуSQL" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Проверить подключение к серверу SQL</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Проверить подключение к серверу SQL</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.ExternalDataSource</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ПроверитьПодключениеКСерверуSQL</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаСнятьПометки" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда снять пометки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Снять все пометки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.UncheckAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаСнятьПометки</Action>
+			<Representation>Picture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаУстановитьПометки" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда установить пометки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отметить все</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.CheckAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаУстановитьПометки</Action>
+			<Representation>Picture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ПересчитатьИтогиРегистров" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пересчитать итоги регистров</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пересчитать итоги регистров</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПересчитатьИтогиРегистров</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаВыполнить" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выполнить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выполнить</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.BusinessProcessStart</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаВыполнить</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОткрытьСтраницуРазработкиНаИнфостарте" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть страницу разработки на Инфостарте</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть страницу разработки на Инфостарте</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОткрытьСтраницуРазработкиНаИнфостарте</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>
