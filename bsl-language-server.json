@@ -6,7 +6,7 @@
             "DeprecatedMethods8317": false,
             "UsingObjectNotAvailableUnix": false,
             "MagicNumber": {
-                "authorizedNumbers": "100"
+                "authorizedNumbers": "100,0,1"
             },
             "Typo": {
                 "userWordsToIgnore": ""
