@@ -14,16 +14,6 @@
 				<CommandName>Form.Command.ПроверитьПодключениеКСерверуSQL</CommandName>
 				<ExtendedTooltip name="ФормаПроверитьПодключениеКСерверуSQLРасширеннаяПодсказка" id="54"/>
 			</Button>
-			<Button name="ОткрытьСтраницуРазработкиНаИнфостарте" id="102">
-				<Type>CommandBarButton</Type>
-				<CommandName>Form.Command.ОткрытьСтраницуРазработкиНаИнфостарте</CommandName>
-				<Picture>
-					<xr:Abs>Picture.png</xr:Abs>
-					<xr:LoadTransparent>false</xr:LoadTransparent>
-				</Picture>
-				<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
-				<ExtendedTooltip name="ОткрытьСтраницуРазработкиНаИнфостартеРасширеннаяПодсказка" id="103"/>
-			</Button>
 		</ChildItems>
 	</AutoCommandBar>
 	<Events>
@@ -478,22 +468,6 @@
 			</Picture>
 			<Action>КомандаВыполнить</Action>
 			<Representation>TextPicture</Representation>
-			<CurrentRowUse>DontUse</CurrentRowUse>
-		</Command>
-		<Command name="ОткрытьСтраницуРазработкиНаИнфостарте" id="6">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Открыть страницу разработки на Инфостарте</v8:content>
-				</v8:item>
-			</Title>
-			<ToolTip>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Открыть страницу разработки на Инфостарте</v8:content>
-				</v8:item>
-			</ToolTip>
-			<Action>ОткрытьСтраницуРазработкиНаИнфостарте</Action>
 			<CurrentRowUse>DontUse</CurrentRowUse>
 		</Command>
 	</Commands>
